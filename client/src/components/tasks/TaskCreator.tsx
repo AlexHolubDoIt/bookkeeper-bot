@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import { createTaskSchema, CreateTaskFormData } from "@/validation/schemas";
 import { useCreateTask } from "@/services";
-import { AxiosError } from "axios";
 
 export const TaskCreator: React.FC = () => {
   const createTaskMutation = useCreateTask();
@@ -83,7 +82,7 @@ export const TaskCreator: React.FC = () => {
 
           {createTaskMutation.isError && (
             <Alert severity="error" sx={{ mt: 2 }}>
-              {createTaskMutation.error instanceof AxiosError
+              {createTaskMutation.error
                 ? createTaskMutation.error?.response?.data?.message
                 : "An error occurred while creating the task"}
             </Alert>

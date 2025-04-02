@@ -97,9 +97,8 @@ export const BotCreator: React.FC = () => {
 
             {createBotMutation.isError && (
               <Alert severity="error" sx={{ mt: 2 }}>
-                {createBotMutation.error instanceof Error
-                  ? createBotMutation.error.message
-                  : "An error occurred while creating the bot"}
+                {createBotMutation.error?.response?.data?.message ||
+                  "An error occurred while creating the bot"}
               </Alert>
             )}
 

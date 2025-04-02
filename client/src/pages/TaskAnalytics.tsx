@@ -175,7 +175,7 @@ export const TaskAnalytics: React.FC = () => {
                 {error ? (
                   <Alert severity="error">
                     Error loading tasks:{" "}
-                    {error instanceof Error ? error.message : "Unknown error"}
+                    {error?.response?.data?.message || "Unknown error"}
                   </Alert>
                 ) : (
                   <TaskList

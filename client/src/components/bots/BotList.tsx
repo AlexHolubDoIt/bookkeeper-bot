@@ -48,7 +48,7 @@ export const BotList: React.FC = () => {
       <Box py={6}>
         <Typography color="error" align="center">
           Error loading bots:{" "}
-          {error instanceof Error ? error.message : "Unknown error"}
+          {error?.response?.data?.message || "Unknown error"}
         </Typography>
       </Box>
     );

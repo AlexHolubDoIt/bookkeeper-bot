@@ -8,6 +8,7 @@ import {
   CreateBotFormData,
   Task,
 } from "@/types";
+import { AxiosError } from "axios";
 
 export const botKeys = {
   all: ["bots"] as const,
